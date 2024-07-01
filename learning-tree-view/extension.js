@@ -11,7 +11,9 @@ const path = require('path');
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
-
+	let rootPath = vscode.workspace.workspaceFolders && vscode.workspace.workspaceFolders.length > 0 
+		? vscode.workspace.workspaceFolders[0].uri.fsPath
+		: undefined
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	// This line of code will only be executed once when your extension is activated
 	console.log('Congratulations, your extension "learning-tree-view" is now active!');
@@ -38,16 +40,11 @@ function activate(context) {
 		}
 
 	});
-
 	context.subscriptions.push(disposable);
 
-	let rootPath = vscode.workspace.workspaceFolders && vscode.workspace.workspaceFolders.length > 0 
-					? vscode.workspace.workspaceFolders[0].uri.fsPath
-					: undefined
-	vscode.window.registerTreeDataProvider(
-		'projMnger',
-		new testView.TestNodeTasksProvider(rootPath)
-	)
+	const nodeTasksProvider = new testView.TestNodeTasksProvider(rootPath);
+	vscode.window.registerTreeDataProvider('projMnger', nodeTasksProvider);
+	vscode.commands.registerCommand('projMnger.refreshEntry', () => nodeTasksProvider.refresh())
 }
 
 // This method is called when your extension is deactivated

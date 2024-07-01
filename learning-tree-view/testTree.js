@@ -36,6 +36,13 @@ function getFilesInDirectorySync(directoryPath) {
 class TestNodeTasksProvider {
     constructor(workspaceRoot) {
         this.workspaceRoot = workspaceRoot;
+        this._onDidChangeTreeData = new vscode.EventEmitter();
+    }
+    get onDidChangeTreeData() {
+        return this._onDidChangeTreeData.event;
+    }
+    refresh() {
+        this._onDidChangeTreeData.fire();
     }
     getTreeItem(element) {
         return element;

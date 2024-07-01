@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+<style type="text/css">.icon-canvas-transparent{opacity:0;fill:#2d2d30;} .icon-vs-out{fill:#2d2d30;} .icon-vs-bg{fill:#c5c5c5;}</style>
+<path class="icon-canvas-transparent" d="M 16 16 h -16 v -16 h 16 v 16 z" id="canvas"/>
+<path class="icon-vs-out" d="M 16 4.3 l -11.7 11.7 h -4.3 v -4.4 l 11.5 -11.6 h 0.3 l 4.2 4.2 v 0 z" id="outline" style="display: none"/>
+<path class="icon-vs-bg" d="M 14.6 4.3 l -1.7 1.8 l -3 -3 l 1.7 -1.8 l 3 3 z m -5.7 -0.3 l -7 7 l 3 3 l 7 -7 l -3 -3 z m -7.9 8.1 v 2.9 h 2.9 l -2.9 -2.9 z" id="iconBg"/></svg>

@@ -19,8 +19,15 @@
         "light": "resources/light/edit.svg",
         "dark": "resources/dark/edit.svg"
       }
-    }
-    ],
+    },
+    {
+      "command": "projMnger.refreshEntry",
+      "title": "Refresh",
+      "icon": {
+        "light": "resources/light/refresh.svg",
+        "dark": "resources/dark/refresh.svg"
+      }
+    }],
     "views": {
       "explorer": [
         {
@@ -30,6 +37,13 @@
       ]
     },
     "menus": {
+      "view/title": [
+        {
+          "command": "projMnger.refreshEntry",
+          "when": "view == projMnger",
+          "group": "navigation"
+        }
+      ],
       "view/item/context": [
         {
           "command": "projMnger.editEntry",
